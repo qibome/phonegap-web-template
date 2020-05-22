@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 
 <!-- Configuration Start: Please customize following configuration -->
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="www.qibo.me" version="1.0.1">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="help.qibo.me" version="1.0.1">
     
     <name>道家養生法</name>
     <description>道法自然的養生法</description>
-    <author href="http://www.qibo.me" email="xportals@gmail.com">黃純沐</author>
+    <author href="http://help.qibo.me" email="xportals@gmail.com">黃純沐</author>
     <!-- Configuration End -->
   
     <!--  allows access to any external resource. -->
