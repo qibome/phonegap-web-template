@@ -46,7 +46,12 @@
                         location.href = "offline.html";
                     } else {
                         // <!-- Configuration Start: Please customize following configuration -->
-                        location.replace("http://help.qibo.me/");
+                        if (localStorage['aut_id'] !== '2') {
+                            location.replace("http://help.qibo.me/index.php");
+                        } else {
+                            location.replace("http://help.qibo.me/index.php");
+                        }
+                        
                         // <!-- Configuration End -->
                     }
                 }
