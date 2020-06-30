@@ -46,8 +46,15 @@
                         location.href = "offline.html";
                     } else {
                         // <!-- Configuration Start: Please customize following configuration -->
-                        var userstatus = localStorage['aut_id'];
-                        location.replace("http://help.qibo.me/index.php?client="+userstatus);
+                        var userid = localStorage['aut_id']; //登入ID  // aut_id
+                        var account = localStorage['account']; //登入帳號  // account
+                        var vip = localStorage['vip'];  //VIP等級  // vip
+                        var sex = localStorage['sex'];  //性別  // sex
+                        var fiveart = localStorage['fiveart'];  //五型人值  // fiveart
+                        var yingyang = localStorage['yingyang'];  //陰陽值  // yingyang
+                        var birthday = localStorage['birthday'];  //出生日期  // birthday
+                        var passvalue = userid + "：" + account + "：" + vip + "：" +  sex + "：" + fiveart + "：" + yingyang + "：" +  birthday; 
+                        location.replace("http://help.qibo.me/index.php?client="+passvalue);
                         // <!-- Configuration End -->
                     }
                 }
