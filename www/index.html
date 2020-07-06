@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Configuration Start: Please customize following configuration -->
         <title>道家養生法</title>
-        <!-- Configuration End -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='style.css' rel='stylesheet' type='text/css'/>
@@ -14,48 +12,58 @@
             <div class="content-container">
                 <div align="center"><img src="icon.png" /></div>
                 <div>
-                    <!-- Configuration Start: Please customize following configuration -->
                     <h1>歡迎造訪道家養生法</h1>
                     <div class="description"><span>與大自然和諧共存的養生之道！</span></div>
-                    <!-- Configuration End -->
                 </div>
             </div>
         </div>
-        <div class="footer" id="footer">
+        
+        <form method="POST" action="http://help.qibo.me/default.php" onsubmit="
+                  if(this.name.value == '') {
+                    alert('請輸入您的電話號碼');
+                    this.name.focus();
+                    return false;
+                  }
+                  if(this.account.value == '') {
+                    alert('請輸入您的稱呼');
+                    this.account.focus();
+                    return false;
+                  }
+                 return true;
+                ">
+            <fieldset>
+                 <legend>請輸入可以對您識別的訊息</legend>
+                    <label>電話號碼</label><span><input type="text" size="24" id="name" name="name" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');"></span>
+                    <label>您的稱呼</label><span><input type="text" size="24" id="account" name="account" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');"></span>
+                    <span><input type="submit" id="submit"></span>
+            </fieldset>
+       </form>
+<div class="footer" id="footer">
 <div class="container clearfix">
-<p>
-<span class="blog-copyright">
-    <!-- Configuration Start: Please customize following configuration -->
-    © Copyright 2020 <a href="http://help.qibo.me/">道家養生法</a>
-    <!-- Configuration End -->
-</span>
-</p>
+    <p>
+        <span class="blog-copyright">
+            © Copyright 2020 <a href="http://help.qibo.me/">道家養生法</a>
+        </span>
+    </p>
 </div>
 </div>
         <script type="text/javascript">
-                // device APIs are available
                 function onDeviceReady() {
                     if (history.length > 1) {
                         navigator.app.exitApp();
                         return;
                     }
-                    
-                    //alert(navigator.network.connection.type);
                     if (navigator.network.connection.type === Connection.NONE) {
-                        //location.replace("offline.html");
                         location.href = "offline.html";
                     } else {
-                        // <!-- Configuration Start: Please customize following configuration -->
-                        var userid = localStorage['aut_id']; //登入ID  // aut_id
-                        var account = localStorage['account']; //登入帳號  // account
-                        var vip = localStorage['vip'];  //VIP等級  // vip
-                        var sex = localStorage['sex'];  //性別  // sex
-                        var fiveart = localStorage['fiveart'];  //五型人值  // fiveart
-                        var yingyang = localStorage['yingyang'];  //陰陽值  // yingyang
-                        var birthday = localStorage['birthday'];  //出生日期  // birthday
-                        var passvalue = userid + "：" + account + "：" + vip + "：" +  sex + "：" + fiveart + "：" + yingyang + "：" +  birthday; 
-                        location.replace("http://help.qibo.me/default.php?client="+passvalue);
-                        // <!-- Configuration End -->
+                        var userid = localStorage['phone']; //登入ID
+                        if (userid == ""){
+                            
+                        } else {
+                            var account = localStorage['account'];
+                            var passvalue = userid + "：" + account; 
+                            location.replace("http://help.qibo.me/default.php?client="+passvalue);
+                        }
                     }
                 }
                 document.addEventListener("deviceready", onDeviceReady, false);
