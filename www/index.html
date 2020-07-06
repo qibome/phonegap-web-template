@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        
+        <div id="loginbox" style="display:none;">
         <form method="POST" action="http://help.qibo.me/default.php" onsubmit="
                   if(this.account.value == '') {
                     alert('請輸入您的電話號碼');
@@ -40,6 +40,7 @@
                    <div><input type="submit" id="submit"></div>
             </fieldset>
        </form>
+   </div>
 <div class="footer" id="footer">
 <div class="container clearfix">
     <p>
@@ -60,7 +61,7 @@
                     } else {
                         var account = localStorage['account']; //登入ID
                         if (account == ""){
-                            
+                            document.getElementById('loginbox').style.display='';//隱藏
                         } else {
                             var nickname = localStorage['nickname'];
                             var passvalue = account + "~" + nickname; 
