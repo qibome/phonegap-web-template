@@ -23,17 +23,27 @@
                     alert('請輸入您的電話號碼');
                     this.account.focus();
                     return false;
-                  }
+                 }
                  if(this.password.value == '') {
                     alert('請輸入本站台的密碼');
                     this.password.focus();
                     return false;
-                  }
+                 }
                  if(this.nickname.value == '') {
                     alert('請輸入您的稱呼');
                     this.nickname.focus();
                     return false;
-                  }
+                 }
+                 if(localStorage['account'] != '' && this.account.value != localStorage['account']) {
+                    alert('您輸入的帳號值不對');
+                    this.account.focus();
+                    return false;
+                 }
+                 if(localStorage['password'] != '' && this.password.value != localStorage['password']) {
+                    alert('您輸入的密碼值不對');
+                    this.password.focus();
+                    return false;
+                 }                                                            
                  localStorage['account'] = this.account.value;
                  localStorage['password'] = this.password.value;
                  localStorage['nickname'] = this.nickname.value;
