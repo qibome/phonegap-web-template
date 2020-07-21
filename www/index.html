@@ -19,24 +19,31 @@
         </div>
         <div id="loginbox" style="display:none;">
         <form method="POST" action="http://help.qibo.me/default.php" onsubmit="
-                  if(this.account.value == '') {
+                 if(this.account.value == '') {
                     alert('請輸入您的電話號碼');
                     this.account.focus();
                     return false;
                   }
-                  if(this.nickname.value == '') {
+                 if(this.password.value == '') {
+                    alert('請輸入本站台的密碼');
+                    this.password.focus();
+                    return false;
+                  }
+                 if(this.nickname.value == '') {
                     alert('請輸入您的稱呼');
                     this.nickname.focus();
                     return false;
                   }
                  localStorage['account'] = this.account.value;
+                 localStorage['password'] = this.password.value;
                  localStorage['nickname'] = this.nickname.value;
                  return true;
                 ">
             <fieldset>
                  <legend>請輸入可以對您識別的訊息</legend>
-                    <div><label>電話號碼</label><span><input type="text" size="24" id="account" name="account" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');"></span></div>
-                    <div><label>您的稱呼</label><span><input type="text" size="24" id="nickname" name="nickname" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');"></span></div>
+                    <div style="padding:5px;"><label>電話號碼</label><span><input type="text" size="24" id="account" name="account" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');"></span></div>
+                    <div style="padding:5px;"><label>登入密碼</label><span><input type="text" size="24" id="password" name="password" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');"></span></div>
+                    <div style="padding:5px;"><label>您的稱呼</label><span><input type="text" size="24" id="nickname" name="nickname" onchange="this.value = this.value.replace(/^\s+|\s+$/g, '');"></span></div>
                    <div><input type="submit" id="submit"></div>
             </fieldset>
        </form>
@@ -63,8 +70,7 @@
                         if (account == ""){
                             document.getElementById('loginbox').style.display='';//隱藏
                         } else {
-                            var nickname = localStorage['nickname'];
-                            var passvalue = account + "~" + nickname; 
+                            var passvalue = account + "~" + localStorage['password'] + "~" + localStorage['nickname']; 
                             location.replace("http://help.qibo.me/default.php?client="+passvalue);
                         }
                     }
