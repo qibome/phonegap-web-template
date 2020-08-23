@@ -1,27 +1,20 @@
 <?xml version="1.0"?>
 
 <!-- Configuration Start: Please customize following configuration -->
-<widget id="com.my.awesomeapp" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:cdv="http://cordova.apache.org/ns/1.0">
-   
-    <platform name="android">
-    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-        <application android:usesCleartextTraffic="true" />
-    </edit-config>
-    </platform>
-    
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="phonegap-web-template.pulipuli.info" version="1.0.0">
+        
     <name>道家養生法</name>
     <description>道法自然的養生法</description>
     <author href="http://help.qibo.me" email="xportals@gmail.com">黃純沐</author>
     <!-- Configuration End -->
   
-    <!--  allows access to any external resource. -->
+     <!--  allows access to any external resource. -->
     <access origin="*"/>
     <allow-navigation href="*" />
+  
     <content src="index.html"/>
     <icon src="icon.png"/>
   
-    <preference name="android-targetSdkVersion" value="29" /> 
-   
     <!-- https://build.phonegap.com/current-support -->
     <preference name="phonegap-version" value="cli-6.5.0" />
     
@@ -32,16 +25,7 @@
     <feature name="http://api.phonegap.com/1.0/network" />
     
     <!-- 外掛 -->
-    <plugin name="cordova-plugin-inappbrowser" spec="1.7.2" />
-    <plugin name="cordova-plugin-network-information" spec="1.3.4" />
-    <plugin name="cordova-plugin-whitelist" spec="1.3.4" />    
-
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
+    <plugin name="cordova-plugin-network-information" spec="~1.3.3" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.3.2" />
 </widget>
-
-
-
-
-
-
-
-
