@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!-- Configuration Start: Please customize following configuration -->
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="help.qibo.me" version="1.0.1">
+<widget id="com.my.awesomeapp" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>道家養生法</name>
     <description>道法自然的養生法</description>
     <author href="http://help.qibo.me" email="xportals@gmail.com">黃純沐</author>
@@ -14,6 +14,12 @@
     <icon src="icon.png"/>
   
     <preference name="android-targetSdkVersion" value="29" />
+    
+    <platform name="android">
+      <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+          <application android:usesCleartextTraffic="true" />
+      </edit-config>
+    </platform>
     
     <!-- https://build.phonegap.com/current-support -->
     <preference name="phonegap-version" value="cli-6.5.0" />
