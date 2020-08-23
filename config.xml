@@ -2,10 +2,12 @@
 
 <!-- Configuration Start: Please customize following configuration -->
 <widget id="com.my.awesomeapp" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    
-    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
-        <application android:usesCleartextTraffic="true"></application>
+   
+    <platform name="android">
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+        <application android:usesCleartextTraffic="true" />
     </edit-config>
+    </platform>
     
     <name>道家養生法</name>
     <description>道法自然的養生法</description>
