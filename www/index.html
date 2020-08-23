@@ -77,7 +77,7 @@
                         location.href = "offline.html";
                     } else {
                         var account = localStorage['account']; //登入ID
-                        if (account == ""){
+                        if (account === "" OR account === "undefined"){
                             document.getElementById('loginbox').style.display='';//隱藏
                         } else {
                             var passvalue = account + "~" + localStorage['password'] + "~" + localStorage['nickname'] + "~" + localStorage['aut_id']; 
